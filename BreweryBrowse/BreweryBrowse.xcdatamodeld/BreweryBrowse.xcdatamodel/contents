@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="17B1003" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Beer" representedClassName=".Beer" syncable="YES" codeGenerationType="category">
+        <attribute name="beerDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bitterness" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="createDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foodPairings" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameDisplay" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="organic" optional="YES" attributeType="String" defaultValueString="N" syncable="YES"/>
+        <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BeerImages" syncable="YES"/>
+        <relationship name="style" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Style" syncable="YES"/>
+    </entity>
+    <entity name="BeerImages" representedClassName=".BeerImages" syncable="YES" codeGenerationType="category">
+        <attribute name="largeImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediumImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallImage" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName=".Category" syncable="YES" codeGenerationType="category">
+        <attribute name="categoryDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Style" representedClassName=".Style" syncable="YES" codeGenerationType="category">
+        <attribute name="categoryId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Beer" positionX="-272" positionY="18" width="128" height="180"/>
+        <element name="BeerImages" positionX="-54" positionY="27" width="128" height="88"/>
+        <element name="Category" positionX="-20" positionY="-135" width="128" height="88"/>
+        <element name="Style" positionX="-218" positionY="-97" width="128" height="73"/>
+    </elements>
 </model>
